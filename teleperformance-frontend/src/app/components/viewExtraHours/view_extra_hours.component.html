@@ -1,0 +1,39 @@
+<header class="login-cta text-center">
+    <h2><strong>Sistemas de Horas Extras</strong></h2>
+</header>
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">C.C</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Inicio y Fin de Contrato</th>
+        <th scope="col">Horario de Trabajo</th>
+        <th scope="col">Hora Extra</th>
+        <th scope="col">Comentarios</th>
+        <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let extras of extra.document">
+        <th scope="row">1</th>
+        <td>{{extras.document}}</td>
+        <td>{{extras.fullname}}</td>
+        <td>{{extras.contractDateStart}}</td>
+        <td>{{extras.workTimeStart}} - {{extras.workTimeEnds}}</td>
+        <td>{{extras.extraTimeStart}} - {{extras.extraTimeEnds}}</td>
+        <td>{{extras.extraTimeComment}}</td>
+        <td><span>Editar</span> - <span>Eliminar</span></td>            
+        </tr>  
+        <tr *ngFor="let extras of extra.data">
+        <th scope="row">1</th>
+        <td>{{extras.document}}</td>
+        <td>{{extras.fullname}}</td>
+        <td>{{extras.contractDateStart}}</td>
+        <td>{{extras.workTimeStart}} - {{extras.workTimeEnds}}</td>
+        <td>{{extras.extraTimeStart}} - {{extras.extraTimeEnds}}</td>
+        <td>{{extras.extraTimeComment}}</td>
+        <td><span>Editar</span> - <span>Eliminar</span></td>            
+        </tr>                    
+    </tbody>
+</table>

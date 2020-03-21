@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #e6e6e6;
+}
+
+*{
+    font-family: Rajdhani;
+}
+.contact-wrapper {
+  background: #fff;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  border-radius: .75em;
+  padding: 2em;
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  width: 1200px;  
+}
+
+.register-form-hours {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.register-form-hours h2{
+  text-align: center;
+}
+
+.register-form-hours textarea{
+  width: 100%;
+  color: #000000;
+}
+
+.text-center{
+  text-align: center;
+}
