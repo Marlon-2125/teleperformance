@@ -7,7 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'; 
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { MatIconModule } from '@angular/material/icon'; 
 
 import { ExtraHoursService } from '../service/extra.service';
 
@@ -21,7 +22,8 @@ import { ExtraHoursService } from '../service/extra.service';
       RouterModule,
       MatTableModule,
       MatPaginatorModule,
-      NgxMaterialTimepickerModule
+      NgxMaterialTimepickerModule,
+      MatIconModule
   ],
   exports: [
       AddExtraHoursComponent,

@@ -6,7 +6,6 @@ import { ExtraHours } from 'src/app/models/extraHours';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 
-
 @Component({
     selector: 'view-extra-hours-app',
     templateUrl: './view_extra_hours.component.html',
@@ -28,7 +27,8 @@ export class ViewExtraHoursComponent {
         'contract',
         'worktime',
         'extratime',
-        'comments'
+        'comments',
+        'actions'
     ]
 
     constructor(private extraHoursService: ExtraHoursService) {
@@ -39,7 +39,7 @@ export class ViewExtraHoursComponent {
         this.extraHoursTable = new MatTableDataSource();
         this.findExtraHours();      
     }
-    
+
     findExtraHours() {
         this.extraHoursService.getExtraHours()
         .map((hours: ExtraHours[]) => {
