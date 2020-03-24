@@ -1,39 +1,72 @@
 <header class="login-cta text-center">
     <h2><strong>Sistemas de Horas Extras</strong></h2>
 </header>
-<table class="table">
-    <thead>
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col">C.C</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Inicio y Fin de Contrato</th>
-        <th scope="col">Horario de Trabajo</th>
-        <th scope="col">Hora Extra</th>
-        <th scope="col">Comentarios</th>
-        <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let extras of extra.document">
-        <th scope="row">1</th>
-        <td>{{extras.document}}</td>
-        <td>{{extras.fullname}}</td>
-        <td>{{extras.contractDateStart}}</td>
-        <td>{{extras.workTimeStart}} - {{extras.workTimeEnds}}</td>
-        <td>{{extras.extraTimeStart}} - {{extras.extraTimeEnds}}</td>
-        <td>{{extras.extraTimeComment}}</td>
-        <td><span>Editar</span> - <span>Eliminar</span></td>            
-        </tr>  
-        <tr *ngFor="let extras of extra.data">
-        <th scope="row">1</th>
-        <td>{{extras.document}}</td>
-        <td>{{extras.fullname}}</td>
-        <td>{{extras.contractDateStart}}</td>
-        <td>{{extras.workTimeStart}} - {{extras.workTimeEnds}}</td>
-        <td>{{extras.extraTimeStart}} - {{extras.extraTimeEnds}}</td>
-        <td>{{extras.extraTimeComment}}</td>
-        <td><span>Editar</span> - <span>Eliminar</span></td>            
-        </tr>                    
-    </tbody>
-</table>
+<div class="wrap">
+    <div class="table-wrapper">
+        <table mat-table [dataSource]="extraHoursTable" class="table card-list-table">
+            <ng-container matColumnDef="document">
+                <th class="text-center" mat-header-cell *matHeaderCellDef>Documento</th>
+                <td class="text-center" data-title="Documento:" mat-cell *matCellDef="let hour">
+                    <div class="text-center">
+                        {{hour.document}}
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="fullname">
+                <th class="text-center" mat-header-cell *matHeaderCellDef>Nombre Completo</th>
+                <td class="text-center" data-title="Nombre Completo:" mat-cell *matCellDef="let hour">
+                    <div class="text-center">
+                        {{hour.fullname}}
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="contract">
+                <th class="text-center" mat-header-cell *matHeaderCellDef>Contratación</th>
+                <td data-title="Movimiento:" mat-cell *matCellDef="let hour">
+                    {{hour.contract_date_start}} - {{hour.contract_date_ends}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="worktime">
+                <th class="text-center" mat-header-cell *matHeaderCellDef>Horario</th>
+                <td data-title="Horario:" mat-cell *matCellDef="let hour">
+                    <div class="relative">
+                        <span class="pdd-left-20">{{hour.work_time_starts}} - {{hour.work_time_ends}}</span>
+                    </div>
+            </ng-container>
+
+            <ng-container matColumnDef="extratime">
+                <th class="text-center" mat-header-cell *matHeaderCellDef>Horas Extra</th>
+                <td mat-cell *matCellDef="let hour" data-title="Horas Extra:">
+                    <div class="text-center">
+                        {{hour.extra_time_starts}} - {{hour.extra_time_ends}}
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th class="text-center" mat-header-cell *matHeaderCellDef>Comentarios</th>
+                <td mat-cell *matCellDef="let hour" data-title="Comentarios:">
+                    <div class="text-center">
+                        {{hour.extra_time_comments}}
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th class="text-center" mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td mat-cell *matCellDef="let hour" data-title="Acciones:">
+                    <div class="text-center">
+                        Editar - Eliminar
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSize]="8" [length]="paginatorSize"></mat-paginator>
+    </div>
+</div>  

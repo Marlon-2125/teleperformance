@@ -1,35 +1,37 @@
 import {Injectable} from  '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Extra_Hours } from '../models/extra_hours';
-import {map} from 'rxjs/operators';
-import { Observable } from 'rxjs/Observable';
+import { ExtraHours } from '../models/ExtraHours';
+
+import { Observable } from 'rxjs';
 
 @Injectable()
-export class ExtraService {
-
-    selectedExtra = Extra_Hours;
-    extrasHours = [];
+export class ExtraHoursService {
 
     public URL_API = 'http://localhost:3000/api/extra';
 
-    constructor(private http: HttpClient){
+    constructor(private _http: HttpClient){
 
     }
 
-    getExtraHours(){
-        return this.http.get(this.URL_API);
+    getExtraHours(): Observable<ExtraHours[]> {
+
+        console.log(`The Extra hours service sent the request [GET => ${this.URL_API}] and is waiting for an answer`);
+
+        return this._http.get<ExtraHours[]>(this.URL_API);
+
     }
 
-    postExtraHours(extras: Extra_Hours){
-        return this.http.put(this.URL_API, extras);
-    }
 
-    putExtraHours(extras: Extra_Hours){
-        return this.http.put(this.URL_API + '/{$extras._id}', extras);
-    }
+    // postExtraHours(extras: ExtraHours){
+    //     return this.http.put(this.URL_API, extras);
+    // }
+
+    // putExtraHours(extras: Extra_Hours){
+    //     return this.http.put(this.URL_API + '/{$extras._id}', extras);
+    // }
 
     
-    deleteExtraHours(_id: string){
-        return this.http.delete(this.URL_API + '/${_id}');
-    }
+    // deleteExtraHours(_id: string){
+    //     return this.http.delete(this.URL_API + '/${_id}');
+    // }
 }

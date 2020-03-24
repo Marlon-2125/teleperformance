@@ -84,8 +84,8 @@ form > .form-row > button:hover {
 
 .register-form-hours {
   width: 360px;
-  padding: 8% 0 0;
   margin: auto;
+  background: linear-gradient(90deg, #00b0ff 0%, rgb(10, 87, 181) 100%);
 }
 
 .register-form-hours h2{
@@ -100,7 +100,8 @@ form > .form-row > button:hover {
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #f2f2f2;
+  background: linear-gradient(90deg, #00b0ff 0%, rgb(10, 87, 181) 100%);
+  color: #ddd;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -108,22 +109,31 @@ form > .form-row > button:hover {
   box-sizing: border-box;
   font-size: 14px;
 }
+
+.form input::placeholder {
+  background: linear-gradient(90deg, #00b0ff 0%, rgb(10, 87, 181) 100%);
+  color: rgba(255,255,255);
+  opacity: 0.6;
+}
+
 .form button {
-  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
+  font-weight: bold;
   outline: 0;
-  background: #4CAF50;
+  background: linear-gradient(90deg, rgb(0, 212, 255) 0%, rgba(0,212,255,1) 50%, rgb(0, 210, 255) 100%);
   width: 100%;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 16px;
   -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
+  transition: all 0.8s ease;
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #fff;
+  color: #000000;
+  font-weight: bold;
 }
 .form .message {
   margin: 15px 0 0;

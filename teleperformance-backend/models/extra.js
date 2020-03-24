@@ -13,4 +13,4 @@ const ExtraHoursSchema = new Schema({
     extra_time_comments: String
 });
 
-module.exports = mongoose.model(name = 'ExtraHours', ExtraHoursSchema, collection = 'extras');
+module.exports = mongoose.model(name = 'ExtraHours', ExtraHoursSchema, collection = 'hours');

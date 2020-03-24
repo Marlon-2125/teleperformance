@@ -1,4 +1,4 @@
-export class Extra_Hours{
+export class ExtraHours{
     constructor(
         public _id: string,
         public document: string,

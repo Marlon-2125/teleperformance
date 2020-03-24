@@ -6,11 +6,15 @@ body{
 *{
     font-family: Rajdhani;
 }
+
+.view-table-hours{
+  padding: 3em;
+}
+
 .contact-wrapper {
   background: #fff;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
   border-radius: .75em;
-  padding: 2em;
   position: absolute;
     left: 50%;
     top: 50%;
@@ -20,20 +24,28 @@ body{
 }
 
 .register-form-hours {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
+  padding-top: 50px;;
+  background: linear-gradient(90deg, #00b0ff 0%, rgb(10, 87, 181) 100%);
 }
 
 .register-form-hours h2{
   text-align: center;
+  color: white;
+  font-size: 24px;
 }
 
 .register-form-hours textarea{
   width: 100%;
-  color: #000000;
+  color: #fff;
+  background: linear-gradient(90deg, #00b0ff 0%, rgb(10, 87, 181) 100%);
 }
 
 .text-center{
   text-align: center;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+  vertical-align: middle;
 }
