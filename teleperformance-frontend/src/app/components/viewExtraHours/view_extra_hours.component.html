@@ -62,15 +62,16 @@
                 <td mat-cell *matCellDef="let hour" data-title="Acciones:">
                     <div class="text-center">
                         <mat-icon>edit</mat-icon>
-                        <mat-icon>delete</mat-icon>
+                        <mat-icon (click) = "delExtraHour(hour._id)">delete</mat-icon>
                         <!-- <button mat-raised-button mat-button color="warn" (click)="mostrarDialogo()">Mostrar diálogo</button> -->
                     </div>
                 </td>
             </ng-container>
-
+            <span class="hidden" [(ngModel)]="_id"></span>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
         <mat-paginator [pageSize]="8" [length]="paginatorSize"></mat-paginator>
     </div>
-</div>  
+</div>
+

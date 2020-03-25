@@ -49,9 +49,7 @@ extraHourCtrl.editExtra = async (req, res) => {
 extraHourCtrl.deleteExtra = async (req, res) => {
     let id_extra = req.params.id;
     await ExtraSchema.findByIdAndRemove(id_extra);
-    res.json({
-        estado3: "Entra a Delete"
-    });
+    res.status(200).send("Eliminado");
 }
 
 module.exports = extraHourCtrl;

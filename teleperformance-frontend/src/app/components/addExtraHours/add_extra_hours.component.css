@@ -26,46 +26,34 @@ form > .form-row > span {
       -ms-user-select: none;
           user-select: none;
 }
-form > .form-row > input, form > .form-row > button {
-  border-radius: .5em;
-  font-family: inherit;
-  padding: 1em .5em;
-  width: 100%;
+form > label {
+  color: white;
 }
-form > .form-row > input {
-  font-weight: bold;
-  -webkit-transition: 100ms ease all;
-  transition: 100ms ease all;
-  width: 100%;
-}
-form > .form-row > input[type=text], form > .form-row > input[type=password] {
-  border: .075em solid #ddd;
-}
-form > .form-row > input:valid + span {
+form > input:valid + span {
   top: 0;
   font-size: .90rem;
 }
-form > .form-row > input:invalid + span {
+form > input:invalid + span {
   top: 50%;
 }
-form > .form-row > input:focus + span {
+form > input:focus + span {
   top: 0;
 }
-form > .form-row > input:required {
+form > input:required {
   box-shadow: none;
 }
-form > .form-row > input:focus {
+form > input:focus {
   border-color: #7b5dfa;
   outline: none;
 }
-form > .form-row > input:focus:invalid {
+form > input:focus:invalid {
   box-shadow: none;
   top: 50%;
 }
-form > .form-row > input:focus:valid {
+form > input:focus:valid {
   top: 0;
 }
-form > .form-row > button {
+form > button {
   background-color: #7b5dfa;
   border: .10em solid #7b5dfa;
   color: #fff;
@@ -74,11 +62,11 @@ form > .form-row > button {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-form > .form-row > button:focus {
+form > button:focus {
   border: 0.1em solid #532cf8;
   outline: none;
 }
-form > .form-row > button:hover {
+form > button:hover {
   background-color: #6744f9;
 }
 

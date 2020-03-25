@@ -5,10 +5,13 @@ import { AddExtraHoursComponent } from './addExtraHours/add_extra_hours.componen
 import { ViewExtraHoursComponent } from './viewExtraHours/view_extra_hours.component';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatIconModule } from '@angular/material/icon'; 
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ExtraHoursService } from '../service/extra.service';
 
@@ -23,13 +26,15 @@ import { ExtraHoursService } from '../service/extra.service';
       MatTableModule,
       MatPaginatorModule,
       NgxMaterialTimepickerModule,
-      MatIconModule
+      MatIconModule,
+      FormsModule,
+      ReactiveFormsModule,
+      CommonModule,
+      MatDialogModule
   ],
   exports: [
       AddExtraHoursComponent,
       ViewExtraHoursComponent,
-      MatTableModule,
-      MatPaginatorModule
   ],
   providers: [ExtraHoursService]
 })

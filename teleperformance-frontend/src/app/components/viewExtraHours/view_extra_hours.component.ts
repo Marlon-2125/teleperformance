@@ -17,7 +17,8 @@ export class ViewExtraHoursComponent {
 
     extraHoursTable: MatTableDataSource<ExtraHours>;
     paginatorSize: Number;
-    
+    _id : String;
+    hoursList : ExtraHours[];
     
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -46,8 +47,18 @@ export class ViewExtraHoursComponent {
             console.log(`The extra hours loaded were: ${JSON.stringify(hours)}`)
             return hours
         }).subscribe(response => {
+            this.hoursList = response;
             this.configTable(response) 
         });
+    }
+
+    delExtraHour(_id) {
+        const confirmDelete = confirm("Esto es una prueba: " + _id);
+        if(confirmDelete == true) {
+            this.extraHoursService.deleteExtraHours(_id)
+                .subscribe(data => alert("Registro eliminado"));
+            
+        }        
     }
     
     configTable(dataExtraHours:ExtraHours[]) {

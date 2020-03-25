@@ -1,10 +1,11 @@
 <div class="form">
   <h2><strong>Registro de Horas Extras</strong></h2>
-  <form #extrasForm="ngForm" (ngSubmit)="createExtraHour" class="register-form">
-    <input type="text" name="document" placeholder="Documento"/>
+  <form class="register-form">
+    <input type="number" name="document" placeholder="Documento"/>
     <input type="text" name="fullname" placeholder="Nombre Completo"/>
-    <input type="text" name="work_time_starts" placeholder="Inicio de Hora Extra"/>
-    <input type="text" name="work_time_ends" placeholder="Fin de Hora Extra"/>
+    <input type="text" name="work_time_starts" placeholder="Inicio de Jornada"/>
+    <label for="username">Username: </label>
+    <input type="date" name="work_time_ends" placeholder="Fin de Jornada" value="2020-03-20" />
     <input type="text" name="extra_time_starts" placeholder="Inicio de Hora Extra"/>
     <input type="text" name="extra_time_ends" placeholder="Fin de Hora Extra"/>
     <input type="text" name="extra_time_comments" placeholder="Comentarios"/>

@@ -21,6 +21,11 @@ export class ExtraHoursService {
 
     }
 
+    deleteExtraHours(_id: string){
+        
+        return this._http.delete(this.URL_API + "/delete/" + _id);
+
+    }
 
     // postExtraHours(extras: ExtraHours){
     //     return this.http.put(this.URL_API, extras);
@@ -31,7 +36,5 @@ export class ExtraHoursService {
     // }
 
     
-    // deleteExtraHours(_id: string){
-    //     return this.http.delete(this.URL_API + '/${_id}');
-    // }
+    
 }
